@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src='https://api.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
+	
+	<title>MapBox</title>
+</head>
+<body>
+
+<div id='map' style='width: 500px; height: 500px;'></div>
+ 
+
+<script>
+mapboxgl.accessToken = 'pk.eyJ1Ijoid2Fya3JhZjEiLCJhIjoiY2ptNXIyeTVjM3ltcDN3b2c5bHpnOWphdCJ9.RTlB00Ja6NGRy0DRq0Tkxw';
+
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v9',
+   center: [74.50, 40]
+});
+
+map.on('load', function() {
+    map.loadImage('https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Cat_silhouette.svg/400px-Cat_silhouette.svg.png', function(error, image) {
+        if (error) throw error;
+        map.addImage('cat', image);
+        map.addLayer({
+            "id": "points",
+            "type": "symbol",
+            "source": {
+                "type": "geojson",
+                "data": {
+                    "type": "FeatureCollection",
+                    "features": [{
+                        "type": "Feature",
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [106.80264, -6.31235]
+                        }
+
+                    }]
+                }
+            },
+            "layout": {
+                "icon-image": "cat",
+                "icon-size": 0.25
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>

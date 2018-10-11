@@ -1,0 +1,12 @@
+.container{
+    display: flex;
+    border: 10px solid goldenrod;
+    min-height: 100vh;
+    flex-wrap: wrap;
+}
+
+.box{
+    width: 33.3333333%;
+    height: 200px;
+    padding: 10px;
+}
