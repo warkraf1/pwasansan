@@ -1,0 +1,16 @@
+{
+    "places":[
+    {
+    "lokasi": [-6.420324, 106.859195],
+    "sponsor" : "Resto Spanyol",
+    "gambar":"../images/resto_spanyol.jpg",
+    "review": "restoran spanyol terbaik di Jakarta"
+    },
+    {
+    "lokasi": [-6.423288, 106.856781],
+    "sponsor" : "Warung Kopi",
+    "gambar":"../images/warkop.jpg",
+    "review": "warung kopi cita rasa yang sangat tinggi dengan harga murah"
+    }
+    ]
+}

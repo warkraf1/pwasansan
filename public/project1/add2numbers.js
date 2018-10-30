@@ -1,10 +1,3 @@
-navigator.serviceWorker.register('../sw.js').then(function(reg){
-
-    if(!navigator.serviceWorker.controller){
-      return;
-	}
-});
-
 function kalkulator() {
 	let angka = document.querySelectorAll('input');
 	let i1 = angka[0].value;
