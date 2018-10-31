@@ -12,11 +12,11 @@
 
 /*grid-template-columns: 100px 100px 100px 100px;*/
 grid-template-columns: 1fr 1fr 1fr 1fr;
- grid-template-rows: 1fr 100px 100px 100px 100px 50px;
+ grid-template-rows: 1fr 100px 100px 100px 100px 1fr;
  grid-gap: 5px;
  }
  .menu {
- background: lightblue;
+ background: #068587;
  /*grid-column-start: 1;
  grid-column-end: 4;*/
  grid-column: 1/6;
@@ -29,13 +29,24 @@ grid-template-columns: 1fr 1fr 1fr 1fr;
  grid-column-end: 1/2;
  }
  .konten {
- background: pink;
+ background: #F2B134;
  grid-column: 2/6;
+ padding-top:2em; 
+ padding-left:3em; 
  }
+
+a{
+text-decoration: none;
+color: dimgray;
+font-size: 2em;
+}
+
  .footer {
- background: lime;
+ background: #068587;
   grid-column: 1/6;
  grid-row : 6/6;
+ padding-top:1em; 
+ text-align: center;
  }
 </style>
 	<title>SanProj</title>
@@ -53,7 +64,7 @@ grid-template-columns: 1fr 1fr 1fr 1fr;
  <div class='konten'>
 	<a href="/project4">Go Fetch</a>
 	 </div>
- <div class='footer' role="contentinfo">Ihsan Khairi Subari</div>
+ <div class='footer' role="contentinfo"><p style="color: aliceblue">Copyright : @SanProj</p></div>
 </div>
 <script>
 	if('serviceWorker' in navigator) {

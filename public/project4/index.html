@@ -1,20 +1,93 @@
 <html>
 <head>
         <title>SanProj</title>
-        <link rel="shortcut icon" type="image/png" href="images/icon-144x144.png" />
+        <link rel="shortcut icon" type="image/png" href="../images/icon-144x144.png" />
         <link rel="manifest" href="../manifest.json">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
 <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
 integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+
+<style>
+                .container {
+                display: grid;
+               
+               /*grid-template-columns: 100px 100px 100px 100px;*/
+               grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-rows: 1fr 500px 100px 100px 100px 1fr;
+                grid-gap: 5px;
+                }
+                .menu {
+                background: #068587;
+                /*grid-column-start: 1;
+                grid-column-end: 4;*/
+                grid-column: 1/6;
+               
+                }
+                .sidebar {
+                background: lightyellow;
+                grid-row-start: 2;
+                grid-row-end: 6;
+                grid-column-end: 1/2;
+                }
+                .konten {
+                background: #F2B134;
+                grid-column: 1/6;
+                padding:1em;
+                height: 48.7em; 
+                }
+               
+               a{
+               text-decoration: none;
+               color: dimgray;
+               font-size: 2em;
+               }
+               
+                .footer {
+                background: #068587;
+                 grid-column: 1/6;
+                grid-row : 6/6;
+                padding-top:1em; 
+                text-align: center;
+                }
+          
+                input{
+                  margin: 1em; 
+                  height: 2em;
+                  font-size: 18px;
+                  border-radius: 0.3em;
+                  border-style: none;
+                  align-content: center;
+                }
+          
+                button{
+                  margin-left: 1em; 
+                  height: 3em;
+                  width: 8em;
+                  border-radius: 0.3em;
+                  background-color: #ED553B;
+                  border-style: none;
+                }
+               </style>
+
 </head>
 <body>
+
+        <div class="container">
+                <div class='menu' role="menu"><img src="../images/icon-512x512.png" width="100px"/></div>
+                <div class='konten'>
+                                <div class='peta' id='mapid' style='width: 100%; height: 32em;'> </div>
+                                <div class='gambar' id='gmb' style="padding-top:1em;">
+                                        </div>
+                                        <div class='review' id='review' style='width: 500px; height: 500px;'>
+                                        </div>
+                </div>
+                <div class='footer' role="contentinfo"><p style="color: aliceblue">Copyright : @SanProj</p></div>
+                </div>
+
 <div class='container'>
-<div class='peta' id='mapid' style='width: 500px; height: 500px;'> </div>
-<div class='gambar' id='gmb'>
-</div>
-<div class='review' id='review' style='width: 500px; height: 500px;'>
-</div>
+
+
 </div>
 <script>
 var mymap = L.map('mapid').setView([-6.420324, 106.859195], 16);

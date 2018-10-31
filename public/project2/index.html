@@ -3,17 +3,69 @@
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" type="image/png" href="../images/sanproj-smal.png" role="img" />
+        <link rel="shortcut icon" type="image/png" href="../images/icon-144x144.png" role="img" />
         <link rel="manifest" href="../manifest.json">
         <meta name="theme-color" content="#ffffff"/>
 	<script src='https://api.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
-	
+
+<style>
+        .container {
+        display: grid;
+       
+       /*grid-template-columns: 100px 100px 100px 100px;*/
+       grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 100px 100px 100px 100px 1fr;
+        grid-gap: 5px;
+        }
+        .menu {
+        background: #068587;
+        /*grid-column-start: 1;
+        grid-column-end: 4;*/
+        grid-column: 1/6;
+       
+        }
+        .sidebar {
+        background: lightyellow;
+        grid-row-start: 2;
+        grid-row-end: 6;
+        grid-column-end: 1/2;
+        }
+        .konten {
+        background: #F2B134;
+        grid-column: 2/6;
+        padding:1em;
+        height: 383px;
+        }
+       
+       a{
+       text-decoration: none;
+       color: dimgray;
+       font-size: 2em;
+       }
+       
+        .footer {
+        background: #068587;
+         grid-column: 1/6;
+        grid-row : 6/6;
+        padding-top:1em; 
+        text-align: center;
+        }
+       </style>
+
 	<title>MapBox</title>
 </head>
 <body>
+        <div class="container">
+                <div class='menu' role="menu"><img src="../images/icon-512x512.png" width="100px"/></div>
+                <div class='sidebar' role="img"><img src="../images/isan2.jpg" srcset="../images/isan2-small.jpg 500w,
+                 ../images/isan2-medium.jpg 1000w, ../images/isan2.jpg 1200w" sizes="50vw" alt="ihsan photo"/></div>
+                <div class='konten'>
+                        <div id='map' style='width: 100%; height: 383px;'></div>
+                </div>
+                <div class='footer' role="contentinfo"><p style="color: aliceblue">Copyright : @SanProj</p></div>
+               </div>
 
-<div id='map' style='width: 500px; height: 500px;'></div>
  
 
 <script>
